@@ -64,7 +64,8 @@ let secondClass = ""
 let score = 0
 let matches = 0
 let scoreboard = document.querySelector("#scoreboard")
-let oldman = document.querySelector(".hidden")
+let oldman = document.querySelector("#winning")
+let losing = document.querySelector("#losing")
 
 function noThird(e){
   console.log("no third card!");
@@ -72,7 +73,7 @@ function noThird(e){
 }
 
 function youStink(){
-  alert("5 tries!! you yourself admit it yourself that you stink");
+  alert("5 tries already!! you yourself, admit it yourself, that you stink");
 }
 
 function youWin(){
@@ -106,6 +107,7 @@ function secondCardClick(event){
       matches ++;
       console.log(`${matches} matches`)
       if(score === 5){setTimeout(youStink(),500);
+                      setTimeout(losing.classList.toggle("hidden"),5);
       };
       if (matches === 5){
         setTimeout(youWin,10);
