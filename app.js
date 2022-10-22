@@ -105,10 +105,12 @@ function secondCardClick(event){
       }
       matches ++;
       console.log(`${matches} matches`)
+      if(score === 5){youStink();
+      };
       if (matches === 5){
         setTimeout(youWin,10);
         setTimeout(oldman.classList.toggle("hidden"),5);
-      }
+      };
     }else{
       setTimeout(function(){
         firstCard.style.backgroundColor = "white";
